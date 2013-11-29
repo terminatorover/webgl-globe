@@ -4,7 +4,7 @@
 from geopy import geocoders
 
 input = open("data.txt","r+")
-
+out = open("output.txt","w")
 def format (line):
 
     s = line.split()
@@ -47,7 +47,13 @@ for line in input.readlines():
     if line_f != -1 :
 #        print (line_f[0])
         location, (lat, lng) = g.geocode(line_f[0] )
+        out.write("\n" + line_f[0] + str(lat) + str(lng)+ "\n")
+    else:
+        print "NEED ENCODING"
         
+
+        
+'''        
         nine = line_f[1]
         zero = line_f[2]
         five = line_f[3]
@@ -57,8 +63,9 @@ for line in input.readlines():
         out_data[5].extend([lat,lng,five])
         out_data[7].extend([lat,lng,ten])           
         print out_data
-    else:
-        print "NEED ENCODING"
+'''
+#    else:
+ #ca       print "NEED ENCODING"
         
 
     
