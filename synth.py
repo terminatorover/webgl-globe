@@ -43,11 +43,12 @@ for line in input.readlines():
     k = "".join(k)
     print k 
     '''
+    print "WTF"
     line_f =  format(line)
     if line_f != -1 :
-#        print (line_f[0])
+        print (line_f[0])
         location, (lat, lng) = g.geocode(line_f[0] )
-        out.write("\n" + line_f[0] + str(lat) + str(lng)+ "\n")
+        out.write("\n" + line_f[0] + " " +str(lat) + " " + str(lng)+ "\n")
     else:
         print "NEED ENCODING"
         
