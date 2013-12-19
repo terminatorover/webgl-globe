@@ -35,11 +35,28 @@ def main():
     
 
         country_cord[country]= my_format(s[-6:])
-        
-        
+    data_input = open("data","r")
+    DATA = ["2009",[],"2010",[],"2011",[],"2012"]#this will be converted to JSON 
+    count = 0
+    for line in data_input.readlines():
+        k =  line.split()
+        if (len(k)>5):
+            numbers = k[1: len(k)-4]
+            country = k[:-4]
+            countr = " ".join(country)
+#           if ( countr in country_cord.keys()):
+ #               print "found----> " + countr
+#                continue 
+#            else:
+#                print "coudn't find +++++>" + countr
+            try: 
+               print countr + " "  + str(country_cord[countr])
+            except: 
+               print "Couldn't find " + countr
+
     ##NOW WE HAVE A DICTIONARY FOR FINDING THE LAT AND LONG
     #----Check 
 #    print country_cord
-    input_data = open(,"r+")
+
     
 main()
